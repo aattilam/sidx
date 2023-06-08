@@ -19,7 +19,9 @@ if echo "$lspci_output_amd" | grep -i "AMD" | grep -i "VGA" >/dev/null; then
 fi
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
-    
+
+wget -O /etc/gnome-initial-setup/vendor.conf https://raw.githubusercontent.com/aattilam/sidx/main/de-custom/gnome-init-vendor.conf
+
 apt update; apt upgrade -y; apt autoremove -y
 
 # Stop and disable the default network service
