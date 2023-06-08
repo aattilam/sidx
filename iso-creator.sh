@@ -2,7 +2,7 @@
 
 udevil mount og-debian.iso
 wait
-cp -rT /media/root/og-debian.iso isofiles/
+cp -rT /media/og-debian.iso isofiles/
 wait
 
 chmod +w -R isofiles/install.amd/
