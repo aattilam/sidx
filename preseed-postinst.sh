@@ -3,6 +3,7 @@
 laptopoutput=$(laptop-detect -v)
 if [[ $laptopoutput == *"We're a laptop"* ]]; then
    apt install tlp tlp-rdw -y; systemctl enable tlp
+   echo "Adding lqx-kernel repository"; curl 'https://liquorix.net/install-liquorix.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
 else
    echo "Adding lqx-kernel repository"; curl 'https://liquorix.net/install-liquorix.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
 fi
