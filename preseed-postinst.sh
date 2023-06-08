@@ -17,6 +17,8 @@ if echo "$lspci_output_amd" | grep -i "AMD" | grep -i "VGA" >/dev/null; then
   apt install libdrm-amdgpu1 xserver-xorg-video-amdgpu mesa-vulkan-drivers libvulkan1 vulkan-tools vulkan-validationlayers
 fi
 
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    
 apt update; apt upgrade -y; apt autoremove -y
 
 # Stop and disable the default network service
