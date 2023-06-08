@@ -42,6 +42,6 @@ Contributions are welcome! If you have any ideas, suggestions, or bug reports, p
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute this software.
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT). Feel free to use, modify, and distribute this software.
 
 Please note that individual packages included in SidX may have their own licenses. Make sure to review the licenses of the packages you are using to ensure compliance with their respective terms.
