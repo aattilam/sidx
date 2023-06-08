@@ -22,4 +22,4 @@ genisoimage -r -J -b isolinux/isolinux.bin -c isolinux/boot.cat \
             -o preseed-sidx.iso isofiles
 
 rm -r isofiles/
-udevil mount og-debian.iso
+udevil umount og-debian.iso
