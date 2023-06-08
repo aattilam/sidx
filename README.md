@@ -10,7 +10,7 @@ SidX is a Debian Sid-based distribution that aims to provide a user-friendly and
 - Utilizes the Liquorix kernel for improved performance
 - Default desktop environment: GNOME
 - Up-to-date package selection
-- Additional software availability through stable and testing repositories
+- Additional software availability through stable, testing repositories and flatpak
 
 ## Getting Started
 
