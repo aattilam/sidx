@@ -1,6 +1,6 @@
 # SidX
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 SidX is a Debian Sid-based distribution that aims to provide a user-friendly and cutting-edge Linux experience. It is designed to automatically install drivers, utilizes the Liquorix kernel for enhanced performance, and offers the GNOME desktop environment by default. SidX keeps its packages up to date, while also allowing users to access additional software from stable and testing repositories.
 
