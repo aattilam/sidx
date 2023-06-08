@@ -16,13 +16,7 @@ SidX is a Debian Sid-based distribution that aims to provide a user-friendly and
 
 ### Download the ISO
 
-To get started with SidX, follow the instructions below:
-
-1. Download the latest release from the [SidX Releases](https://github.com/aattilam/sidx/releases) page.
-2. Create a bootable USB drive using the downloaded ISO file.
-3. Boot your system from the USB drive.
-4. Follow the on-screen instructions to install SidX.
-5. Enjoy the cutting-edge Linux experience!
+The ISO is still in the works currently.
 
 ### Build It Yourself
 
