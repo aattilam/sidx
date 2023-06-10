@@ -20,6 +20,8 @@ fi
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
+wget -O /etc/gnome-initial-setup/vendor.conf https://raw.githubusercontent.com/aattilam/sidx/main/gnome-init-vendor.conf
+
 apt update; apt upgrade -y; apt autoremove -y
 
 # Stop and disable the default network service
