@@ -10,7 +10,7 @@ fi
 
 if [[ $(lspci -nn | egrep -i "3d|display|vga" | grep "NVIDIA") == *NVIDIA* ]]; then
   echo "Found NVIDIA device, installing driver."
-  apt install nvidia-driver -y; clear
+  apt install nvidia-driver -y;
 fi
 
 lspci_output_amd=$(lspci)
@@ -19,6 +19,7 @@ if echo "$lspci_output_amd" | grep -i "AMD" | grep -i "VGA" >/dev/null; then
 fi
 
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install flathub org.libreoffice.LibreOffice -y
 
 wget -O /etc/gnome-initial-setup/vendor.conf https://raw.githubusercontent.com/aattilam/sidx/main/gnome-init-vendor.conf
 
