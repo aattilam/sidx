@@ -21,6 +21,7 @@ fi
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.libreoffice.LibreOffice -y
 
+mkdir -p /etc/gnome-initial-setup
 wget -O /etc/gnome-initial-setup/vendor.conf https://raw.githubusercontent.com/aattilam/sidx/main/gnome-init-vendor.conf
 
 apt update; apt upgrade -y; apt autoremove -y
