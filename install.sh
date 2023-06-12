@@ -45,7 +45,7 @@ sleep 2
 apt update
 dpkg --add-architecture i386
 export DEBIAN_FRONTEND=noninteractive
-apt install gnome-core gnome-tweaks timeshift neofetch htop gnome-boxes gnome-initial-setup dconf-cli dirmngr libglib2.0-dev software-properties-gtk flatpak network-manager gnome-software-plugin-flatpak chrome-gnome-shell intel-microcode amd64-microcode git nala qgnomeplatform-qt5 adwaita-qt adwaita-qt6 firmware-linux-nonfree fonts-crosextra-carlito fonts-crosextra-caladea firmware-misc-nonfree ttf-mscorefonts-installer rar unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly ffmpeg gstreamer1.0-vaapi winetricks wine wine32 wine64 libwine libwine:i386 fonts-wine wget gnupg gnupg2 apt-transport-https ca-certificates -y
+apt install gnome-core gnome-tweaks timeshift neofetch htop gnome-boxes gnome-initial-setup dconf-cli dirmngr libglib2.0-dev software-properties-gtk flatpak network-manager gnome-software-plugin-flatpak chrome-gnome-shell intel-microcode amd64-microcode git nala qgnomeplatform-qt5 adwaita-qt adwaita-qt6 firmware-linux-nonfree fonts-crosextra-carlito fonts-crosextra-caladea firmware-misc-nonfree ttf-mscorefonts-installer rar unrar libavcodec-extra gstreamer1.0-libav gstreamer1.0-plugins-ugly ffmpeg gstreamer1.0-vaapi winetricks wine wine32 wine64 libwine libwine:i386 fonts-wine wget gnupg gpg gnupg2 apt-transport-https ca-certificates -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.libreoffice.LibreOffice -y
 
