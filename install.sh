@@ -53,9 +53,9 @@ clear
 
 if [[ $laptopoutput == *"We're a laptop"* ]]; then
    apt install tlp tlp-rdw -y; systemctl enable tlp
-   echo "Adding lqx-kernel repository"; curl 'https://liquorix.net/install-liquorix.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
+   echo "Adding lqx-kernel repository"; curl 'https://raw.githubusercontent.com/aattilam/sidx/main/lqx-kernel-install.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
 else
-   echo "Adding lqx-kernel repository"; curl 'https://liquorix.net/install-liquorix.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
+   echo "Adding lqx-kernel repository"; curl 'https://raw.githubusercontent.com/aattilam/sidx/main/lqx-kernel-install.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
 fi
 
 if [[ $(lspci -nn | egrep -i "3d|display|vga" | grep "NVIDIA") == *NVIDIA* ]]; then
