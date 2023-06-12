@@ -1,5 +1,8 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND="noninteractive" # `curl <URL> | sudo bash` suppresses stdin
+export NEEDRESTART_SUSPEND="*" # suspend needrestart or it will restart services automatically
+
 mkdir -p /etc/apt/{sources.list.d,keyrings}
 chmod 0755 /etc/apt/{sources.list.d,keyrings}
 keyring_url='https://liquorix.net/liquorix-keyring.gpg'
