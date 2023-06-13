@@ -79,6 +79,19 @@ echo "Configuring networking"
 systemctl stop networking
 systemctl disable networking
 
+rm /etc/network/interfaces
+touch /etc/network/interfaces
+cat <<EOT >> /etc/network/interfaces
+# This file describes the network interfaces available on your system
+# and how to activate them. For more information, see interfaces(5).
+
+source /etc/network/interfaces.d/*
+
+# The loopback network interface
+auto lo
+iface lo inet loopback
+EOT
+
 # Enable and start Network Manager
 systemctl enable NetworkManager
 systemctl start NetworkManager
