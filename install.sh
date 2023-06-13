@@ -68,9 +68,6 @@ if echo "$lspci_output_amd" | grep -i "AMD" | grep -i "VGA" >/dev/null; then
   apt install libdrm-amdgpu1 xserver-xorg-video-amdgpu mesa-vulkan-drivers libvulkan1 vulkan-tools vulkan-validationlayers
 fi
 
-mkdir -p /etc/gnome-initial-setup
-wget -O /etc/gnome-initial-setup/vendor.conf https://raw.githubusercontent.com/aattilam/sidx/main/gnome-init-vendor.conf
-
 echo "Upgrading system and removing unnecessary packages"
 sleep 2
 apt upgrade -y; apt autoremove -y
