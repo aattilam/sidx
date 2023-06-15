@@ -49,7 +49,7 @@ apt install gnome-core gnome-tweaks timeshift neofetch htop gnome-boxes gnome-in
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.libreoffice.LibreOffice -y
 
-echo "Adding lqx-kernel repository"; curl 'https://raw.githubusercontent.com/aattilam/sidx/main/lqx-kernel-install.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
+echo "Adding lqx-kernel repository"; curl 'https://raw.githubusercontent.com/aattilam/sidx/main/scripts/lqx-kernel-install.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
 
 if [[ $laptopoutput == *"We're a laptop"* ]]; then
    apt install tlp tlp-rdw -y; systemctl enable tlp
