@@ -51,7 +51,7 @@ EOT
 
 echo "Upgrading system and removing unnecessary packages"
 sleep 2
-apt upgrade -y; apt autoremove -y
+apt update; apt upgrade -y; apt autoremove -y
 update-initramfs -u
 
 echo "Configuring networking"
