@@ -5,8 +5,11 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 
 laptopoutput=$(laptop-detect -v)
 
-if [[ $laptopoutput == *"We're a notebook"* ]]; then
-   apt install tlp tlp-rdw -y; systemctl enable tlp
+if [[ $laptopoutput == *"not"* ]]; then
+   echo "We are on a desktop"
+else
+   apt install tlp tlp-rdw -y
+   systemctl enable tlp
 fi
 
 if [[ $(lspci -nn | egrep -i "3d|display|vga" | grep "NVIDIA") == *NVIDIA* ]]; then
