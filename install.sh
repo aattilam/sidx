@@ -51,13 +51,14 @@ flatpak install flathub org.libreoffice.LibreOffice -y
 
 echo "Adding lqx-kernel repository"; curl 'https://raw.githubusercontent.com/aattilam/sidx/main/scripts/lqx-kernel-install.sh' -o liquorix.sh; chmod +x liquorix.sh; ./liquorix.sh; rm liqourix.sh
 
-laptopoutput=$(laptop-detect -v)
+is_laptop=$(laptop-detect)
 
-if [[ $laptopoutput == *"not"* ]]; then
-   echo "We are on a desktop"
+if [ "$is_laptop" == "true" ]; then
+  echo "System is a laptop."
+  apt install tlp tlp-rdw -y
+  systemctl enable tlp
 else
-   apt install tlp tlp-rdw -y
-   systemctl enable tlp
+  echo "System is not a laptop. Doing nothing."
 fi
 
 if [[ $(lspci -nn | egrep -i "3d|display|vga" | grep "NVIDIA") == *NVIDIA* ]]; then
