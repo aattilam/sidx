@@ -3,9 +3,9 @@
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install flathub org.libreoffice.LibreOffice -y
 
-is_laptop=$(laptop-detect)
+is_laptop=$(dmidecode -s chassis-type)
 
-if [ "$is_laptop" == "true" ]; then
+if [ "$is_laptop" == "Notebook" ]; then
   echo "System is a laptop."
   apt install tlp tlp-rdw -y
   systemctl enable tlp
