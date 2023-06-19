@@ -68,7 +68,7 @@ fi
 
 lspci_output_amd=$(lspci)
 if echo "$lspci_output_amd" | grep -i "AMD" | grep -i "VGA" >/dev/null; then
-  apt install libdrm-amdgpu1 xserver-xorg-video-amdgpu mesa-vulkan-drivers libvulkan1 vulkan-tools vulkan-validationlayers
+  apt install libdrm-amdgpu1 xserver-xorg-video-amdgpu mesa-vulkan-drivers libvulkan1 vulkan-tools vulkan-validationlayers -y
 fi
 
 echo "Upgrading system and removing unnecessary packages"
