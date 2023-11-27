@@ -1,0 +1,4 @@
+#!/bin/bash
+
+chmod 744 -R /etc/skel/.local/share/gnome-shell/extensions/gtk4-ding\@smedius.gitlab.com/
+locale-gen

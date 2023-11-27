@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export DEBIAN_FRONTEND="noninteractive" # `curl <URL> | sudo bash` suppresses stdin
+export NEEDRESTART_SUSPEND="*" # suspend needrestart or it will restart services automatically
+
+
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+

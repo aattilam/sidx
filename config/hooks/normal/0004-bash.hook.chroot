@@ -1,0 +1,14 @@
+#!/bin/bash
+
+curl -sS https://starship.rs/install.sh -o starship-inst.sh
+chmod +x starship-inst.sh 
+./starship-inst.sh --yes
+rm starstarship-inst.sh
+
+git clone https://github.com/dylanaraps/pfetch.git
+install pfetch/pfetch /usr/local/bin/
+rm -r pfetch/
+
+
+echo 'eval "$(starship init bash)"' | tee -a /etc/bash.bashrc
+echo 'pfetch' | tee -a /etc/bash.bashrc

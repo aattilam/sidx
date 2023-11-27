@@ -1,0 +1,9 @@
+#!/bin/bash
+export DEBIAN_FRONTEND=noninteractive
+dpkg --add-architecture i386
+
+
+
+apt-get update
+apt-get install --install-recommends wine wine32 wine64-preloader wine32-preloader wine-binfmt wine64 libwine libwine:i386 fonts-wine -y
+
