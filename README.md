@@ -1,6 +1,6 @@
 
 # sidx
-Sidx is a custom debian based system.
+Sidx is a personalized Debian system I made from my own desktop, turned into an easy-to-install ISO image.
 
 # Build the iso with live-build
 
