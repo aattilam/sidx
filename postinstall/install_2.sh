@@ -1,18 +1,16 @@
 #!/bin/bash
 
 apt-get update
-apt-get install -y dmidecode imagemagick
+apt-get install -y dmidecode imagemagick laptop-detect
 
-is_laptop=$(dmidecode -s chassis-type)
-
-if [ "$is_laptop" == "Notebook" ] || [ "$is_laptop" == "Laptop" ]; then
-  echo "System is a laptop."
-  apt-get install tlp tlp-rdw -y
-  systemctl enable tlp
+if laptop-detect; then
+    echo "System is a laptop."
+    apt-get install tlp tlp-rdw -y
+    systemctl enable tlp
+    echo "TLP installed and enabled."
 else
-  echo "System is not a laptop. Doing nothing."
+    echo "System is not a laptop. Doing nothing."
 fi
-
 
 install_gpu_drivers() {
     if lspci | grep -i "amd" | grep -i "vga\|3d\|2d" ; then
