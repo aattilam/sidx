@@ -8,11 +8,11 @@ My current system workflow made into an installable ISO.
    
    ```git clone https://github.com/aattilam/sidx.git```
    
-3. **run the iso-gen.sh script**
+3. **Install live-build and live-config**
    
    ```$ apt-get install -y live-build live-config```
    
-5. **Install live-build and live-config**
+5. **Run the iso-gen script**
    
    ```cd sidx; bash iso-gen.sh```
    
