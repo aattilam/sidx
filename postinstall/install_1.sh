@@ -109,22 +109,16 @@ plugins=ifupdown,keyfile
 managed=true
 EOT
 
-createduser=$(ls home/)
-
 mkdir tempfiles
 cd tempfiles
 
 git clone https://github.com/aattilam/sidx.git
 cd sidx/dotfiles/
-tar -xvf extensions.tar.xz -C /usr/share/gnome-shell/extensions
+mkdir -p /etc/skel/.local/share/gnome-shell/extensions
+tar -xvf extensions.tar.xz -C /etc/skel/.local/share/gnome-shell/extensions
 cp -r .config /etc/skel/
-mkdir -p /home/$createduser/.config/
-cp -r .config/* /home/$createduser/.config/
 chmod +x /etc/skel/.config/autostart-scripts/dconf.sh
-chmod +x /home/$createduser/.config/autostart-scripts/dconf.sh
-cd ../../
-rm -r sidx/
-cd ..
-rm -r tempfiles
+cd ../../../
+rm -r tempfiles/
 
 
