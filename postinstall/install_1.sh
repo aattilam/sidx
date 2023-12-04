@@ -118,7 +118,7 @@ git clone https://github.com/aattilam/sidx.git
 cd sidx/dotfiles/
 tar -xvf extensions.tar.xz -C /usr/share/gnome-shell/extensions
 cp -r .config /etc/skel/
-mkdir /home/$createduser/.config/
+mkdir -p /home/$createduser/.config/
 cp -r .config/* /home/$createduser/.config/
 chmod +x /etc/skel/.config/autostart-scripts/dconf.sh
 chmod +x /home/$createduser/.config/autostart-scripts/dconf.sh
