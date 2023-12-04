@@ -3,7 +3,7 @@
 export DEBIAN_FRONTEND="noninteractive" # `curl <URL> | sudo bash` suppresses stdin
 export NEEDRESTART_SUSPEND="*" # suspend needrestart or it will restart services automatically
 
-apt-get install -y git curl wget tar gnupg gpg gnupg2 apt-transport-https ca-certificates 
+apt-get install -y git curl jq wget tar gnupg gpg gnupg2 apt-transport-https ca-certificates 
 
 rm /etc/apt/sources.list
 touch /etc/apt/sources.list
