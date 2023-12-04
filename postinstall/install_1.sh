@@ -39,8 +39,6 @@ apt-get update
 apt-get upgrade -y
 apt-get autoremove -y
 
-echo "==========================================================================================-apt-config"
-
 #lqx kernel
 #mkdir -p /etc/apt/{sources.list.d,keyrings}
 #chmod 0755 /etc/apt/{sources.list.d,keyrings}
@@ -74,8 +72,6 @@ git clone https://github.com/dylanaraps/pfetch.git
 install pfetch/pfetch /usr/local/bin/
 rm -r pfetch/
 
-echo "==========================================================================================-bash-promt-config"
-
 rm /etc/locale.gen
 touch /etc/locale.gen
 
@@ -101,7 +97,6 @@ EOT
 
 locale-gen
 
-echo "==========================================================================================-locale-config"
 
 rm /etc/NetworkManager/NetworkManager.conf
 touch /etc/NetworkManager/NetworkManager.conf
@@ -114,44 +109,22 @@ plugins=ifupdown,keyfile
 managed=true
 EOT
 
-
-echo "==========================================================================================-network-config"
-
 mkdir extensions
 cd extensions
 
-repos=(
-    "https://github.com/ubuntu/gnome-shell-extension-appindicator.git"
-    "https://gitlab.com/smedius/desktop-icons-ng.git"
-    "https://gitlab.com/arcmenu/ArcMenu.git"
-    "https://github.com/home-sweet-gnome/dash-to-panel.git"
-    "https://github.com/icedman/search-light.git"
-    "https://github.com/MartinPL/Tray-Icons-Reloaded.git"
-    )
-
-target_directory="/usr/share/gnome-shell/extensions/"
-
-for repo in "${repos[@]}"; do
-    repo_name=$(basename "$repo" .git)
-    git clone "$repo" "$repo_name"
-    uuid=$(jq -r .uuid "$repo_name/metadata.json")
-    mv "$repo_name" "$target_directory/$uuid"
-done
-
-cd ..
-rm -r extensions/
-
-echo "==========================================================================================-extensions-config"
-
 git clone https://github.com/aattilam/sidx.git
+cd sidx/dotfiles/
+tar extensions.tar.xz -C /usr/share/gnome-shell/extensions
+cd ../../
+
+
 cd sidx/dotfiles/
 cp -r .config /etc/skel/
 INSTUSERNAME=$(debconf-get-selections | grep passwd/make-user | sed 's/^.* //')
-cp -r .config/* /home/$INSTUSERNAME/.config
+cp -r .config/* /home/$INSTUSERNAME/.config/
 chmod +x /etc/skel/.config/autostart-scripts/dconf.sh
 chmod +x /home/$INSTUSERNAME/.config/autostart-scripts/dconf.sh
 cd ../../
 rm -r sidx/
 
-echo "==========================================================================================-dotfiles-config"
 
