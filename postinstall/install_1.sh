@@ -114,11 +114,7 @@ cd extensions
 
 git clone https://github.com/aattilam/sidx.git
 cd sidx/dotfiles/
-tar extensions.tar.xz -C /usr/share/gnome-shell/extensions
-cd ../../
-
-
-cd sidx/dotfiles/
+tar -xvf extensions.tar.xz -C /usr/share/gnome-shell/extensions
 cp -r .config /etc/skel/
 INSTUSERNAME=$(debconf-get-selections | grep passwd/make-user | sed 's/^.* //')
 cp -r .config/* /home/$INSTUSERNAME/.config/
