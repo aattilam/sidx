@@ -8,11 +8,6 @@ apt-get install -y git curl jq wget tar gnupg gpg gnupg2 apt-transport-https ca-
 rm /etc/apt/sources.list
 touch /etc/apt/sources.list
 
-echo "Recreating sources list"
-
-rm /etc/apt/sources.list
-touch /etc/apt/sources.list
-
 cat <<EOT >> /etc/apt/sources.list
 deb http://deb.debian.org/debian sid main contrib non-free non-free-firmware
 deb-src http://deb.debian.org/debian sid main contrib non-free non-free-firmware
@@ -43,6 +38,8 @@ EOT
 apt-get update 
 apt-get upgrade -y
 apt-get autoremove -y
+
+echo "==========================================================================================-apt-config"
 
 #lqx kernel
 #mkdir -p /etc/apt/{sources.list.d,keyrings}
@@ -77,6 +74,8 @@ git clone https://github.com/dylanaraps/pfetch.git
 install pfetch/pfetch /usr/local/bin/
 rm -r pfetch/
 
+echo "==========================================================================================-bash-promt-config"
+
 rm /etc/locale.gen
 touch /etc/locale.gen
 
@@ -102,6 +101,8 @@ EOT
 
 locale-gen
 
+echo "==========================================================================================-locale-config"
+
 rm /etc/NetworkManager/NetworkManager.conf
 touch /etc/NetworkManager/NetworkManager.conf
 
@@ -113,6 +114,9 @@ plugins=ifupdown,keyfile
 managed=true
 EOT
 
+
+echo "==========================================================================================-network-config"
+
 mkdir extensions
 cd extensions
 
@@ -123,7 +127,7 @@ repos=(
     "https://github.com/home-sweet-gnome/dash-to-panel.git"
     "https://github.com/icedman/search-light.git"
     "https://github.com/MartinPL/Tray-Icons-Reloaded.git"
-)
+    )
 
 target_directory="/usr/share/gnome-shell/extensions/"
 
@@ -137,6 +141,7 @@ done
 cd ..
 rm -r extensions/
 
+echo "==========================================================================================-extensions-config"
 
 git clone https://github.com/aattilam/sidx.git
 cd sidx/dotfiles/
@@ -147,3 +152,6 @@ chmod +x /etc/skel/.config/autostart-scripts/dconf.sh
 chmod +x /home/$INSTUSERNAME/.config/autostart-scripts/dconf.sh
 cd ../../
 rm -r sidx/
+
+echo "==========================================================================================-dotfiles-config"
+
