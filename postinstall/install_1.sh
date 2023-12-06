@@ -118,6 +118,9 @@ mkdir -p /etc/skel/.local/share/gnome-shell/extensions
 tar -xvf extensions.tar.xz -C /etc/skel/.local/share/gnome-shell/extensions
 cp -r .config /etc/skel/
 chmod +x /etc/skel/.config/autostart-scripts/dconf.sh
+mkdir -p /etc/skel/.local/share/themes/
+wget https://github.com/lassekongo83/adw-gtk3/releases/download/v5.1/adw-gtk3v5-1.tar.xz
+tar -xvf adw-gtk3v5-1.tar.xz -C /etc/skel/.local/share/themes
 cd ../../../
 rm -r tempfiles/
 
