@@ -58,6 +58,7 @@ apt-get update -y
 apt-get install -y linux-headers-amd64
 apt-get autoremove -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+flatpak install org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 
 
 curl -sS https://starship.rs/install.sh -o starship-inst.sh
