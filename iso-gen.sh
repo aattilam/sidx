@@ -6,5 +6,5 @@ lb config \
 --debian-installer-gui false \
 --archive-areas "main contrib non-free non-free-firmware" \
 --debootstrap-options "--variant=buildd" \
---initramfs none
-
+--initramfs none \
+--system normal
