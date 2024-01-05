@@ -1,8 +1,5 @@
 #!/bin/bash
 
-apt-get update
-apt-get install -y dmidecode imagemagick laptop-detect
-
 if laptop-detect; then
     echo "System is a laptop."
     apt-get install tlp tlp-rdw -y
