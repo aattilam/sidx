@@ -3,8 +3,6 @@
 export DEBIAN_FRONTEND="noninteractive" # `curl <URL> | sudo bash` suppresses stdin
 export NEEDRESTART_SUSPEND="*" # suspend needrestart or it will restart services automatically
 
-apt-get install -y git curl jq wget tar gnupg gpg gnupg2 apt-transport-https ca-certificates 
-
 rm /etc/apt/sources.list
 touch /etc/apt/sources.list
 
@@ -34,29 +32,13 @@ Pin: release n=testing
 Pin-Priority: 1000
 EOT
 
+dpkg --add-architecture i386
 
 apt-get update 
 apt-get upgrade -y
 apt-get autoremove -y
 
-#lqx kernel
-#mkdir -p /etc/apt/{sources.list.d,keyrings}
-#chmod 0755 /etc/apt/{sources.list.d,keyrings}
-#keyring_url='https://liquorix.net/liquorix-keyring.gpg'
-#keyring_path='/etc/apt/keyrings/liquorix-keyring.gpg'
-#curl "$keyring_url" | gpg --batch --yes --output "$keyring_path" --dearmor
-#chmod 0644 "$keyring_path"
-#repo_file="/etc/apt/sources.list.d/liquorix.list"
-#repo_code="sid"
-#repo_line="[arch=amd64 signed-by=$keyring_path] https://liquorix.net/debian $repo_code main"
-#echo "deb $repo_line"      > $repo_file
-#echo "deb-src $repo_line" >> $repo_file
-
-dpkg --add-architecture i386
-apt-get update -y
-#apt-get install -y linux-image-liquorix-amd64 linux-headers-liquorix-amd64
 apt-get install -y linux-headers-amd64
-apt-get autoremove -y
 flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 flatpak install org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
 
